@@ -1,4 +1,5 @@
 <?php
+require_once('lib/glip/lib/glip.php');
 
 class Project
 {
