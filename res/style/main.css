@@ -1,6 +1,43 @@
 html {
 	background-color: #000;
+	background-image: url(../gx/bg.jpg);
+	background-repeat: repeat-x;
+	background-position: top left;
 	color: #fff;
+}
+
+/**
+ * Custom fonts
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * @vendor:     Casady &amp; Greene
+ * @vendorurl:  http://www.moorstation.org/typoasis/designers/casady_greene/
+ * @licenseurl: http://www.fontsquirrel.com/license/MicroFLF
+ */
+
+@font-face {
+	font-family: 'MicroFLFRegular';
+	src: url('../fonts/MicroFLF.eot');
+	src: local('MicroFLF Regular'), local('MicroFLF'), url('../fonts/MicroFLF.woff') format('woff'), url('../fonts/MicroFLF.ttf') format('truetype'), url('../fonts/MicroFLF.svg#MicroFLF') format('svg');
+}
+
+@font-face {
+	font-family: 'MicroFLFMediumItalic';
+	src: url('../fonts/MicroFLF-Italic.eot');
+	src: local('MicroFLF Medium Italic'), local('MicroFLF-Italic'), url('../fonts/MicroFLF-Italic.woff') format('woff'), url('../fonts/MicroFLF-Italic.ttf') format('truetype'), url('../fonts/MicroFLF-Italic.svg#MicroFLF-Italic') format('svg');
+}
+
+@font-face {
+	font-family: 'MicroFLFBold';
+	src: url('../fonts/MicroFLF-Bold.eot');
+	src: local('MicroFLF Bold'), local('MicroFLF-Bold'), url('../fonts/MicroFLF-Bold.woff') format('woff'), url('../fonts/MicroFLF-Bold.ttf') format('truetype'), url('../fonts/MicroFLF-Bold.svg#MicroFLF-Bold') format('svg');
+}
+
+@font-face {
+	font-family: 'MicroFLFBoldItalic';
+	src: url('../fonts/MicroFLF-BoldItalic.eot');
+	src: local('MicroFLF Bold Italic'), local('MicroFLF-BoldItalic'), url('../fonts/MicroFLF-BoldItalic.woff') format('woff'), url('../fonts/MicroFLF-BoldItalic.ttf') format('truetype'), url('../fonts/MicroFLF-BoldItalic.svg#MicroFLF-BoldItalic') format('svg');
 }
 
 /**
@@ -9,4 +46,35 @@ html {
 
 #topDeck, #mainPanel {
 	padding: 0 1em;
+	position: relative;
+	z-index: 1;
+}
+
+#shine {
+	width: 426px;
+	height: 234px;
+	background-image: url(../gx/shine.png);
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 0;
+}
+
+/**
+ * Top Deck Design
+ */
+
+#topDeck h1 {
+	font: 60px/68px 'MicroFLFRegular', Arial, sans-serif;
+	letter-spacing: 0;
+	color: #abc5ff;
+	margin: 0;
+}
+
+/**
+ * index: Project list
+ */
+
+#projectList h3 {
+	font: 16px/18px 'MicroFLFRegular', Arial, sans-serif;
 }
