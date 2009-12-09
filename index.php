@@ -8,7 +8,7 @@ cs_show_header('Code Stewart',
 ?>
 <div id="projectList">
 <?php foreach(Project::getAll() as $project): ?>
-	<h3><a href="#"><?=$project->getTitle();?></a></h3>
+	<h3><a href="#"><span class="name"><?=$project->getTitle();?></span> &bull; <span class="status"></span></a></h3>
 	<div></div>
 <?php endforeach; ?>
 </ul>

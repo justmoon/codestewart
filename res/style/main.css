@@ -67,8 +67,9 @@ html {
 #topDeck h1 {
 	font: 60px/68px 'MicroFLFRegular', Arial, sans-serif;
 	letter-spacing: 0;
-	color: #abc5ff;
+	color: #fff;
 	margin: 0;
+	text-shadow: 2px 2px 2px #000;
 }
 
 /**
@@ -77,4 +78,22 @@ html {
 
 #projectList h3 {
 	font: 16px/18px 'MicroFLFRegular', Arial, sans-serif;
+}
+
+#projectList .currentCommit {
+	display: inline;
+	color: #5AC744;
+	padding: 0;
+}
+
+
+#projectList .currentCommit:hover {
+	text-decoration: underline;
+}
+
+/**
+ * General purpose classes
+ */
+.disabled {
+	color: #777;
 }

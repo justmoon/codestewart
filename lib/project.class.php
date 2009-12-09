@@ -36,4 +36,42 @@ class Project
 		return $projects;
 	}
 
+	public function hasRepo($name = 'main')
+	{
+		return null !== ProjectRepository::check($this, $name);
+	}
+
+	public function getRepo($name = 'main')
+	{
+		return new ProjectRepository($this, $name);
+	}
+}
+
+class ProjectRepository extends Git
+{
+	protected $project;
+	protected $name;
+
+	public function __construct(Project $project, $name = 'main')
+	{
+		$this->project = $project;
+		
+		$repo = self::check($project, $name);
+		if ($repo === null) trigger_error('Couldn\'t find repository called "'.$name.'" for project "'.$this->folder.'" in '.$repo, E_USER_ERROR);
+		
+		$this->name = $name;
+		
+		parent::__construct($repo);
+	}
+	
+	static public function check(Project $project, $name)
+	{
+		global $qconfig;
+		
+		$repo = $qconfig['dir_code'].$project->folder.'/repo/'.$name.'/.git';
+		if (!is_dir($repo)) {
+			return null;
+		}
+		return $repo;
+	}
 }
