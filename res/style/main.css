@@ -91,6 +91,26 @@ html {
 	text-decoration: underline;
 }
 
+#projectList .ui-finder {
+	padding: 0;
+}
+
+#projectList .ui-finder-header {
+	padding: 0;
+}
+
+#projectList .ui-finder .ui-widget-content {
+	border: 0;
+}
+
+#projectList .ui-finder .ui-finder-list-item {
+	border-left: 0;
+}
+
+#projectList .ui-finder-list-item {
+	margin: 0;
+}
+
 /**
  * General purpose classes
  */

@@ -16,8 +16,14 @@ class Project
 		$this->folder = $name;
 	}
 	
+	public function getName()
+	{
+		return $this->folder;
+	}
+	
 	public function getTitle()
 	{
+		// TODO: Find and show a prettier name
 		return $this->folder;
 	}
 
@@ -44,6 +50,11 @@ class Project
 	public function getRepo($name = 'main')
 	{
 		return new ProjectRepository($this, $name);
+	}
+	
+	public function getDeployments()
+	{
+		return array();
 	}
 }
 
