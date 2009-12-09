@@ -1,0 +1,12 @@
+html {
+	background-color: #000;
+	color: #fff;
+}
+
+/**
+ * Top Tier Layout Elements
+ */
+
+#topDeck, #mainPanel {
+	padding: 0 1em;
+}
