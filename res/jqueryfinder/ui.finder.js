@@ -494,7 +494,7 @@ $.fn.finder = function(o,m){
 			})();
 			
 	// If column already exists, remove it
-		var newColumn = $('div[data-finder-list-id="'+columnId+'"]');
+		var newColumn = self.element.find('div[data-finder-list-id="'+columnId+'"]');
 		if(newColumn.length > 0) { newColumn[0].parentNode.removeChild(newColumn[0]); }
 		
 	// Specify new column, and add necessary attributes

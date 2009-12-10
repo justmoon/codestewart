@@ -13,8 +13,14 @@ if (!$project->hasRepo()) {
 	$data['status'] = 'norepo';
 } else {
 	$repo = $project->getRepo();
+	$latestCommit = $repo->getObject($repo->getTip());
+
 	$data['status'] = 'commit';
-	$data['currentCommit'] = sha1_hex($repo->getTip());
+	$data['currentCommit'] = array(
+		'sha1' => sha1_hex($repo->getTip()),
+		'author' => $latestCommit->author->name,
+		'summary' => $latestCommit->summary
+	);
 }
 
 echo json_encode($data);
