@@ -97,6 +97,7 @@ html {
 
 #projectList .ui-finder-header {
 	padding: 0;
+	background-color: #333;
 }
 
 #projectList .ui-finder .ui-widget-content {
@@ -109,6 +110,16 @@ html {
 
 #projectList .ui-finder-list-item {
 	margin: 0;
+}
+
+#projectList .ui-finder-button {
+	width: 18px;
+	height: 18px;
+}
+
+#projectList .ui-finder-button .ui-icon {
+	left: 1px;
+	top: 1px;
 }
 
 /**

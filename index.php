@@ -13,5 +13,5 @@ cs_show_header('Code Stewart',
 	<h3><a href="#"><span class="name"><?=$project->getTitle();?></span> &bull; <span class="status"></span></a></h3>
 	<ul id="project_<?=$project->getName();?>" class="project"></ul>
 <?php endforeach; ?>
-</ul>
+</div>
 <?php cs_show_footer(); ?>

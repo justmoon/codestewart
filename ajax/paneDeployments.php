@@ -9,5 +9,5 @@ $project = new Project($name);
 <?php foreach ($project->getDeployments() as $deployment): ?>
 	$deployment->getStatus();
 <?php endforeach; ?>
-<li class="ui-finder-file"><a href="ajax/paneDeploymentCreate.php?project=<?=$name;?>&x=x.jpg" title="title is on link, not image">Create</a></li>
+<li class="ui-finder-file"><a href="ajax/paneDeploymentCreate.php?project=<?=$name;?>&x=x.jpg" title="title is on link, not image">Create Deployment</a></li>
 </ul>

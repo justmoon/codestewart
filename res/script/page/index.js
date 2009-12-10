@@ -20,62 +20,11 @@ jQuery(function ($) {
 		e.html('<li class="ui-finder-folder"><a href="ajax/paneDeployments.php?project='+project+'">Deployments</a></li>');
 		
 		e.finder({
-			onRootReady: function(rootList,finderObj){
-				console.log('Root ready',arguments)
-			},
-			onInit : function(finderObj) {
-	
-				console.log('Finder initialised',arguments)
-	
-				$('.ui-finder-action-refresh').click(function() {
-					$('[name="refresh"]').click();
-				});
-	
-	
-				$('.ui-finder-action-open').click(function(){
-					$('[name="select"]').click();
-				});
-
-				$('.ui-finder-action-current').click(function(){
-					$('[name="getCurrent"]').click();
-				});
-
-				$('.ui-finder-action-destroy').click(function(){
-					$('[name="createFinder"]').click();
-				});
-
-			},
-			onItemSelect : function(listItem,eventTarget,finderObject){			
-				var anchor = $('a',listItem),
-					href = anchor.attr('rel');
-	
-			// Debug is a function specified in Finder script for debugging purposes
-			// Remove it if unnecessary
-				console.log('onItemSelect - URL: ',href)
-
-			// By returning false, the url specified is not fetched
-			// ie. Do not display new column if selected item is not an image
-				if(href.indexOf('.jpg') == -1) {return false;}
-	
-			},
-			onFolderSelect : function(listItem,eventTarget,finderObject){
-				var anchor = $('a',listItem),
-					href = anchor.attr('rel');
-		
-				console.log('onFolderSelect - URL: ',href)
+			onItemSelect : function(listItem,eventTarget,finderObject){
+				CodeStewart.panelStarter = null;
 			},
 			onItemOpen : function(listItem,newColumn,finderObject){
-				var anchor = $('a',listItem),
-					href = anchor.attr('href');
-	
-				console.log('onItemOpen - Column source: ',newColumn.attr('data-finder-list-source'))
-
-			},
-			onFolderOpen : function(listItem,newColumn,finderObject){
-				var anchor = $('a',listItem),
-					href = anchor.attr('href');
-	
-				console.log('onFolderOpen - Column source: ',newColumn.attr('data-finder-list-source'))
+				if ("function" == typeof CodeStewart.panelStarter) CodeStewart.panelStarter();
 			}
 		});
 		return false;
