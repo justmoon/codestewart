@@ -1,9 +1,12 @@
 <?php
 require_once('lib/glip/lib/glip.php');
+require_once('lib/configfile.class.php');
 
 class Project
 {
 	public $folder;
+	
+	protected $config = null;
 
 	public function __construct($name)
 	{
@@ -14,6 +17,8 @@ class Project
 		}
 		
 		$this->folder = $name;
+		
+		$this->config = new ConfigFile($qconfig['dir_code'].$name.'/config.yaml');
 	}
 	
 	public function getName()
@@ -23,8 +28,7 @@ class Project
 	
 	public function getTitle()
 	{
-		// TODO: Find and show a prettier name
-		return $this->folder;
+		return $this->config->get('title', $this->folder);
 	}
 
 	static public function getAll()
@@ -54,7 +58,28 @@ class Project
 	
 	public function getDeployments()
 	{
-		return array();
+		require_once('lib/deployment.class.php');
+	
+		$deployments = array();
+		
+		foreach ($this->config->get('deployments', array()) as $deploymentConfig) {
+			$deployments[] = Deployment::fromConfig($this, $deploymentConfig);
+		}
+		
+		return $deployments;
+	}
+	
+	public function getDeployment($key)
+	{
+		require_once('lib/deployment.class.php');
+		
+		$deployments = $this->config->get('deployments', array());
+		
+		if (!isset($deployments[$key])) {
+			trigger_error('Couldn\'t find deployment '.$key.' in project "'.$this->getTitle().'"', E_USER_ERROR);
+		}
+		
+		return Deployment::fromConfig($this, $deployments[$key]);
 	}
 }
 
