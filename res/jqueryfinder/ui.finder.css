@@ -15,7 +15,7 @@
 .ui-finder .ui-finder-column ul,
 .ui-finder .ui-finder-column ol{list-style:none;margin:0;padding:0;}
 .ui-finder .ui-finder-column .ui-finder-list-item{margin:1px;
-	padding:6px 20px 6px 10px;
+	padding:6px 10px 6px 10px;
 	line-height:1.3em;position:relative;overflow:hidden;}
 .ui-finder .ui-finder-column .ui-finder-list-item.ui-state-default,
 .ui-finder .ui-finder-column .ui-finder-list-item.ui-state-hover{top:-2px;padding-top:7px;}
@@ -26,7 +26,7 @@
 .ui-finder .ui-finder-column .ui-finder-list-item div{display:none;}
 .ui-finder .ui-finder-column .ui-finder-list-item > a{text-decoration:none;cursor:pointer;display:inline-block;outline:none;position:relative;padding:0 0 0 25px;}
 .ui-finder .ui-finder-column .ui-finder-list-item:hover > a{text-decoration:underline;}
-.ui-finder .ui-finder-column .ui-finder-list-item.ui-finder-loading{background-image:url(loading.gif);background-repeat:no-repeat;background-position:right center !important;}
+.ui-finder .ui-finder-column .ui-finder-list-item.ui-finder-loading{background-image:url(progress_dark.gif);background-repeat:no-repeat;background-position:right center !important;}
 .ui-finder-list-item.ui-finder-loading .ui-finder-icon-arrow,
 .ui-finder-file .ui-finder-icon-arrow,
 .ui-finder-list-item-file .ui-finder-icon-arrow{visibility:hidden;}
